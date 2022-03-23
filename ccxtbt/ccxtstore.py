@@ -167,7 +167,7 @@ class CCXTStore(with_metaclass(MetaSingleton, object)):
 
     @retry
     def getposition(self,symbol):
-        return self.exchange.fetch_positions(symbol=symbol)
+        return self.exchange.fetch_positions(self)
 
     @retry
     def create_order(self, symbol, order_type, side, amount, price, params):
