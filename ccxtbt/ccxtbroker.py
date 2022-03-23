@@ -181,11 +181,11 @@ class CCXTBroker(with_metaclass(MetaCCXTBroker, BrokerBase)):
         self.notifs.put(order)
 
     def getposition(self, data, clone=True):
-        # return self.o.getposition(data._dataname, clone=clone)
-        pos = self.positions[data._dataname]
-        if clone:
-            pos = pos.clone()
-        return pos
+        return self.store.getposition()
+#         pos = self.positions[data._dataname]
+#         if clone:
+#             pos = pos.clone()
+#         return pos
 
     def next(self):
         if self.debug:
