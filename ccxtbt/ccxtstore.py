@@ -174,7 +174,7 @@ class CCXTStore(with_metaclass(MetaSingleton, object)):
         # returns the order
         return self.exchange.create_order(symbol=symbol, type=order_type, side=side,
                                           amount=amount, price=price, params=params)
-    def set_leverage(self, leverage, symbol=None, params=params) :
+    def set_leverage(self, leverage, symbol=None, params={}) :
         return self.exchange.set_leverage(self, leverage=leverage, symbol=symbol, params=params)
 
     @retry
