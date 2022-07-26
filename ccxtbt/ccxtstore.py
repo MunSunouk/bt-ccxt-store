@@ -188,6 +188,9 @@ class CCXTStore(with_metaclass(MetaSingleton, object)):
     @retry
     def fetch_my_trades(self):
         return self.exchange.fetch_my_trades()
+      
+    def fetch_trading_fees(self) :
+        return self.exchange.fetch_trading_fees(self)
 
     @retry
     def fetch_ohlcv(self, symbol, timeframe, since, limit, params={}):
